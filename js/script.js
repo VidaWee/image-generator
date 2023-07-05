@@ -8,8 +8,11 @@ const getImage = async function(){
     const res = await fetch("https://picsum.photos/v2/list?limit=100");
     const images = await res.json();
     //console.log(images);
-    selecRandomImage(images);
+    selectRandomImage(images);
+   
 };
+
+
 
 const selectRandomImage = function (images) {
     const randomIndex = Math.floor(Math.random() * images.length);
@@ -17,7 +20,10 @@ const selectRandomImage = function (images) {
     const randomImage = images[randomIndex];
     // console.log(randomImage);
     displayImage(randomImage);
+   
   };
+
+
 
 const displayImage = function(randomImage){
 
@@ -28,7 +34,7 @@ const displayImage = function(randomImage){
     imgDiv.classList.remove("hide");
 
 };
-button.addEventListener("click", function() {
+button.addEventListener("click", function() { 
 
     getImage();
 
